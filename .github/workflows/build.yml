@@ -9,7 +9,7 @@ on:
       - master
       - develop
   schedule:
-    - cron: '0 5 * * *'
+    - cron: "0 5 * * *"
 
 jobs:
   ## linux / ubuntu
@@ -111,3 +111,10 @@ jobs:
     secrets: inherit
     with:
       name: cachyos-3
+
+  cachyos-4:
+    uses: ./.github/workflows/_build-linux.yml
+    needs: ubuntu-22
+    secrets: inherit
+    with:
+      name: cachyos-4
